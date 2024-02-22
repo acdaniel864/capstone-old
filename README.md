@@ -17,15 +17,15 @@ Develop a predictive model using historical price data of investment-grade wines
 - Build a back-of-house application for quick portfolio searches and providing investment returns to potential investors.<br>
 
 ## Metric for Success
-TBD - some research required to define the accuracy and criteria that would validate the model's readiness for production use.
-For now I think within 10%+- (via RMSE) of actual price. 
+
+Looking at historic price volatility to work out how we define a successful prediction. Define average volitility - for example if wine prices generally only move 5% max a year, target RSME less than 5% of price. If we find significant variation in volatility across categories (e.g. vintages or producers) we can set some more specific targets.
 
 ## Process
 
 ### 1. Data Collection
 - **Source**: Wine Compare API, access confirmed awaiting access key
 - **Key Features**: price history, current market price, vintage, region, producer, bottle size, weather data, critics ratings, grape variety, rarity, production quantities, brand power, regional vintage quality, optimum drinking age. Optional additions: Cru Classe status (or equivalent), Robert Parker score, Averaged Other Critics' score, Wine-Searcher rank / Google reach, Weighted production levels, Liquidity as evidenced by Liv-ex bid/offer spread, Supply to market over time.
-- **Core Wine Regions to focus on**: Napa Valley (US), Piedmont and Tuscany (Italy), Bordeaux, Burgundy, Champagne, and Rhone (France).
+- **Core Wine Regions to focus on**: Napa Valley (US), Piedmont and Tuscany (Italy), Bordeaux, Burgundy, Champagne, and Rhone (France). (Secondary importance: Spain and Australia)
 
 ### 2. Data Preparation
 - Combine data sources, handle missing values/outliers.
@@ -44,12 +44,15 @@ For now I think within 10%+- (via RMSE) of actual price.
 - Explore correlations between price changes and potential features like vintage, region, grape variety, critic ratings, and auction history.
 - Identify trends in the data particularly those which can be of use to sales and marketing teams. 
 - Find initial coefficients with LR.
+- Investigate is "Burgundy is overpriced at the moment vs. Bordeaux which is underpriced".
+- Start at market level then analyse: region, year, producer.
 
 ### 4. EDA - Individual Wine Level
 - Investigate price trends for individual wines over time.
 - Analyse the distribution of price changes for different wine characteristics.
 - Visualise relationships between features and price changes for individual wines.
 - Find initial coefficients with LR.
+- Investigate current market wisdom 'younger vintages perform better and that brand equity / critic scores / vintage quality vs. price is the deciding factor.'
 
 ### 5. Modelling
 #### Aggregate Level
@@ -86,3 +89,11 @@ For now I think within 10%+- (via RMSE) of actual price.
 - Computational and resource limitations for advanced models.
 - Risk of models predicting current trends without offering new insights.
 
+## The Application: 
+Purpose: 
+
+
+Functionality: 
+1. Type in the name of a wine and see how back vintages have performed over different time horizons (i.e. how they have appreciated). 
+
+2. Recommend a portfolio based on a budget (e.g. these are the most undervalued wines on the market right now).
