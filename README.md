@@ -3,7 +3,7 @@ Capstone Aaran Daniel
 Predictive Modelling and Application Development for Investment-Grade (Fine) Wine
 
 ## Problem Statement
-Working for a wine investment advisory company, they would like predict future prices of investment-grade wines to successfully advise customers on investments. The task involves building a predictive model and a back-of-house application for the sales team to search the portfolio for wines and provide historical returns to potential customers/investors.
+I work for a wine investment advisory company. The company would like predict future prices of investment-grade wines to successfully advise customers on investments. The task involves building a predictive time series model that finds wines which will appreciate most in the coming X months (TBC). The company would also like back-of-house application for the sales team, allowing them to quickly search the portfolio for wines and provide historical returns to potential customers/investors.
 
 ## Primary Aim
 Develop a predictive model using historical price data of investment-grade wines to forecast future price appreciation.
@@ -46,6 +46,7 @@ Looking at historic price volatility to work out how we define a successful pred
 - Find initial coefficients with LR.
 - Investigate is "Burgundy is overpriced at the moment vs. Bordeaux which is underpriced".
 - Start at market level then analyse: region, year, producer.
+- Research suggests removing bottles prices above $50,000 USD 
 
 ### 4. EDA - Individual Wine Level
 - Investigate price trends for individual wines over time.
@@ -53,6 +54,14 @@ Looking at historic price volatility to work out how we define a successful pred
 - Visualise relationships between features and price changes for individual wines.
 - Find initial coefficients with LR.
 - Investigate current market wisdom 'younger vintages perform better and that brand equity / critic scores / vintage quality vs. price is the deciding factor.'
+- Look at daily volitility and consider smoothing out the volitility with rolling mean.
+- It has been suggested in research that past significant increases in wine prices suggest a slowing in appreciation in future - ie the opposite of momentum. 
+
+**Preliminary research suggests the following to verify:**
+- Lower price ranges have better returns - because it attracts the investment and x
+- Salient brands names actually have worse returns - the big names perform worse over time. They are already expensive. 
+- Collectors items have worse returns.
+
 
 ### 5. Modelling
 #### Aggregate Level
@@ -90,10 +99,31 @@ Looking at historic price volatility to work out how we define a successful pred
 - Risk of models predicting current trends without offering new insights.
 
 ## The Application: 
-Purpose: 
-
+Purpose: Allow sales are marketing team to quickly search wines and provide historical returns information to prospective customers (potential wine investors). 
 
 Functionality: 
 1. Type in the name of a wine and see how back vintages have performed over different time horizons (i.e. how they have appreciated). 
 
 2. Recommend a portfolio based on a budget (e.g. these are the most undervalued wines on the market right now).
+
+## Expected Imports 
+
+import matplotlib.pyplot as plt
+import pandas as pd
+
+from sklearn.metrics import mean_squared_error
+from sklearn.model_selection import train_test_split
+
+from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
+from statsmodels.tsa.arima.model import ARIMA
+from statsmodels.tsa.statespace.sarimax import SARIMAX
+from statsmodels.tsa.stattools import adfuller
+
+
+
+import warnings # necessary b/c pandas & statsmodels datetime issue
+warnings.simplefilter(action="ignore")
+
+Other: 
+import VARIMA from DARTS
+Prophet 
