@@ -65,7 +65,8 @@ Looking at historic price volatility to work out how we define a successful pred
 - "Lower price ranges have better returns." Perhaps this is explained by the lower priced wines still having appeal to drinking purchasers as opposed to just investors. <br>
 - Salient brands names actually have worse returns - the big names perform worse over time. They are already expensive to their brand recogintion is alread 'priced in'. Where as un up and comer is yet to have their boom.<br>
 - 'Collectors items' have worse returns.<br>
-- In bordeux 'good years have a higher price when they coming during a good stock market year', there are opportunities in a bad stock market year. The idea being IG wine investors dont have money in a bad stock market year. 
+- In bordeux 'good years have a higher price when they coming during a good stock market year', there are opportunities in a bad stock market year. The idea being IG wine investors dont have money in a bad stock market year.
+- In bordeux buy blue chips in a so-so year when they are cheap - the 'good years' have a danger of being overpriced, see 2010 prices have not recovered.
 
 ### 5. Modelling
 
