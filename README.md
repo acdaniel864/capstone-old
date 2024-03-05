@@ -67,7 +67,8 @@ Looking at historic price volatility to work out how we define a successful pred
 - 'Collectors items' have worse returns.<br>
 - In bordeux 'good years have a higher price when they coming during a good stock market year', there are opportunities in a bad stock market year. The idea being IG wine investors dont have money in a bad stock market year.
 - In bordeux buy blue chips in a so-so year when they are cheap - the 'good years' have a danger of being overpriced, see 2010 prices have not recovered.
-- 'Prestige cuvee will always go up' ep one Wine Investment Podcast 
+- 'Prestige cuvee will always go up' ep one Wine Investment Podcast
+- Barolo and brunello italian wine have potential to go up.
 
 ### 5. Modelling
 
